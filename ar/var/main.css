@@ -1,0 +1,35 @@
+
+body{margin: 0;} 
+.main-area{
+    position: absolute; 
+    background: #8d8dcd; 
+    height: 100vh; 
+    width:100vw; 
+    z-index: 100;}
+.name-and-wish-area, .select-action-area{
+    position: absolute;
+    margin: auto;
+    align-self: center;
+    background: white;
+    padding: 30px 10px;
+    border-radius: 20px;
+    height: 400px;
+    width: 50%;   
+    top: 50%;
+    margin-top: -200;
+    left: 25%;
+    align-items: center;
+}
+
+.home-icon{
+    height: 30%;
+    width: 30%;
+    background: "#CCC";
+}
+
+/* SCREEN Size */
+
+@media screen and (max-width: 799px) {
+    .name-and-wish-area, .select-action-area{width: 100% !important; margin: 20px;}
+
+}

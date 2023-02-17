@@ -1,10 +1,43 @@
 <html>
     <head>    
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-        <script scr="./var/main.js"></script>
+        <script src="./var/main.js"></script>
+        <link rel="stylesheet" href="./var/main.css">
+
     </head>
 
     <body>
-        <p>checking </p>
+        <div class="main-area">
+
+            <div class="select-action-area" id="select-action-area">
+                <div>
+                    <div class="home-icon"></div><br/>
+                    <button id="saa-edit">Edit</button>
+                    <button id="saa-view">View</button>
+                </div>                
+            </div>
+
+
+            <div class="name-and-wish-area" id="name-and-wish-area">
+                <p>Please insert the user name</p>
+
+                <table>
+                    <tr>
+                        <td>Name</td>
+                        <td><input id="user-name" name="user-name"></input></td>
+                    </tr>
+                    <tr>
+                        <td>Wish Text</td>
+                        <td><textarea id="user-wishtext" name="user-wishtext" rows="4"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td colspan="=2">
+                            <button name="nw-submit" id="nw-submit" class="submit-button">Submit</button> 
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+        </div>
     </body>
 </html>
