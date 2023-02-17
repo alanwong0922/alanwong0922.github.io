@@ -1,5 +1,11 @@
+/**
+ * Created by Alan Wong 2023/2 
+ * 
+ */
 
-let searchParams = new URLSearchParams(window.location.search)
+console.log("main js run");
+
+let searchParams = new URLSearchParams(window.location.search);
 if(searchParams.has('id')){
     let id = searchParams.get('id');
     console.log("ID: \(id)");
