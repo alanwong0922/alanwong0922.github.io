@@ -46,9 +46,25 @@ body{margin: 0;}
     font-size: 1.25em;
     color: white;
   }
-  
-/* SCREEN Size */
 
+.input-area{
+    z-index: 1000;
+    position: absolute;
+    margin: 40px;
+    background: #00000011;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.input-area button.left{
+    margin-right: 10px;
+}
+
+.input-area button.right{
+
+}
+
+/* SCREEN Size */
 @media screen and (max-width: 799px) {
     .name-and-wish-area, .select-action-area{width: 100% !important; margin: 20px;}
 

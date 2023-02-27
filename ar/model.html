@@ -2,19 +2,16 @@
   <head>
     <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
     <script src="var/input.js"></script>
+    <link rel="stylesheet" href="var/main.css"/>
   </head>
   <body>
 
-    <div class="input-area" style="z-index: 1000;
-        position: absolute;
-        margin: 40px;
-        background: #00000011;
-        padding: 20px;
-        border-radius: 20px;">
+    <div class="input-area">
+        <p>Insert your name and message ;)</p>
         <input id="input-field-name" placeholder="name"/><br/>
         <input id="input-field-message" placeholder="message"/><br/>
-        <button onclick="updateData()" style="margin-right: 10px;">Update</button>
-        <button onclick="submitRecord()">Submit Data</button>
+        <button onclick="updateData()" class="input-button left">Update</button>
+        <button onclick="submitRecord()"  class="input-button right">Submit Data</button>
     </div>
     <a-scene>
         <a-assets>
