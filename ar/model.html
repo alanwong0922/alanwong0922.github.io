@@ -10,8 +10,8 @@
         background: #00000011;
         padding: 10px;
         border-radius: 20px;">
-        <input id="input-field-1" placeholder="name"/>
-        <input id="input-field-2" placeholder="message"/>
+        <input id="input-field-name" placeholder="name"/>
+        <input id="input-field-message" placeholder="message"/>
         <button onclick="submitData()">Submit</button>
     </div>
     <a-scene>
@@ -26,7 +26,9 @@
         <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
         <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
         <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
+        <a-text position="0 0 -2" id="custom-name" value="" text="CT"></a-text>
         <a-text position="0 0 -2" id="custom-text" value="Custom Text" text="CT"></a-text>
+
         <a-entity position="0 0 -3" scale="0.01 0.01 0.01" gltf-model="#trex-model"></a-entity>
         <a-sky color="#ECECEC"></a-sky>
     </a-scene>
@@ -39,10 +41,17 @@
         document.getElementById('custom-text').setAttribute('color', newColor);
 
         function submitData(){
-            console.log("Submit Data");
+ 
+            var textName = getElementById('input-field-name').val();
+            var textMessage = getElementById('input-field-message').val();
+
             var newColor = "#0000aa";
             var newText = 'Replce Text';
-            document.getElementById('custom-text').setAttribute('value', newText);
+            console.log("Submit Data ==== \(textName), \(textMessage)");
+
+            document.getElementById('custom-name').setAttribute('value', textName);
+            document.getElementById('custom-name').setAttribute('color', newColor);
+            document.getElementById('custom-text').setAttribute('value', textMessage);
             document.getElementById('custom-text').setAttribute('color', newColor);
         }
     </script>
