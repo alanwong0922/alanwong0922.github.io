@@ -4,10 +4,15 @@
   </head>
   <body>
 
-    <div>
+    <div class="input-area" style="z-index: 1000;
+        position: absolute;
+        margin: 40px;
+        background: #00000011;
+        padding: 10px;
+        border-radius: 20px;">
         <input id="input-field-1" placeholder="name"/>
         <input id="input-field-2" placeholder="message"/>
-        <button onclick="submitData()"/>
+        <button onclick="submitData()">Submit</button>
     </div>
     <a-scene>
         <a-assets>
@@ -22,7 +27,7 @@
         <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
         <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
         <a-text position="0 0 -2" id="custom-text" value="Custom Text" text="CT"></a-text>
-        <a-entity position="0 0 -3" scale="1 1 1" gltf-model="#trex-model"></a-entity>
+        <a-entity position="0 0 -3" scale="0.01 0.01 0.01" gltf-model="#trex-model"></a-entity>
         <a-sky color="#ECECEC"></a-sky>
     </a-scene>
 
