@@ -1,6 +1,7 @@
 <html>
   <head>
     <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+    <script src="var/input.js"></script>
   </head>
   <body>
 
@@ -12,7 +13,9 @@
         border-radius: 20px;">
         <input id="input-field-name" placeholder="name"/>
         <input id="input-field-message" placeholder="message"/>
-        <button onclick="submitData()">Submit</button>
+        <button onclick="updateData()">Update</button>
+        <br/>
+        <button onclick="submitRecord()">Submit Data</button>
     </div>
     <a-scene>
         <a-assets>
@@ -26,7 +29,7 @@
         <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
         <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
         <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
-        <a-text position="0 0.3 -2" id="custom-name" value="" text="CT"></a-text>
+        <a-text position="0 -0.3 -2" id="custom-name" value="" text="CT"></a-text>
         <a-text position="0 0 -2" id="custom-text" value="Custom Text" text="CT"></a-text>
 
         <a-entity position="0 0 -3" scale="0.05 0.05 0.05" gltf-model="#trex-model"></a-entity>
@@ -35,25 +38,8 @@
 
 
     <script>
-        var newColor = "#00aa00";
-        var newText = 'New Text';
-        document.getElementById('custom-text').setAttribute('value', newText);
-        document.getElementById('custom-text').setAttribute('color', newColor);
+        
 
-        function submitData(){
- 
-            var textName = document.getElementById('input-field-name').value;
-            var textMessage = document.getElementById('input-field-message').value;
-
-            var newColor = "#0000aa";
-            var newText = 'Replce Text';
-            console.log("Submit Data ==== \(textName), \(textMessage)");
-
-            document.getElementById('custom-name').setAttribute('value', textName);
-            document.getElementById('custom-name').setAttribute('color', newColor);
-            document.getElementById('custom-text').setAttribute('value', textMessage);
-            document.getElementById('custom-text').setAttribute('color', newColor);
-        }
     </script>
   </body>
 </html>
