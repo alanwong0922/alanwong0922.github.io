@@ -9,12 +9,11 @@
         position: absolute;
         margin: 40px;
         background: #00000011;
-        padding: 10px;
+        padding: 20px;
         border-radius: 20px;">
-        <input id="input-field-name" placeholder="name"/>
-        <input id="input-field-message" placeholder="message"/>
-        <button onclick="updateData()">Update</button>
-        <br/>
+        <input id="input-field-name" placeholder="name"/><br/>
+        <input id="input-field-message" placeholder="message"/><br/>
+        <button onclick="updateData()" style="margin-right: 10px;">Update</button>
         <button onclick="submitRecord()">Submit Data</button>
     </div>
     <a-scene>
@@ -24,7 +23,11 @@
                 src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/examples/image-tracking/nft/trex/scene.gltf">
             </a-asset-item>
         </a-assets>
-        <a-entity geometry="primitive: cone; radiusBottom: 1; radiusTop: 0.1" id="ar-plane"></a-entity>
+        <a-entity 
+            position="-0.5 0 -3"
+            geometry="primitive: cone; radiusBottom: 1; radiusTop: 0.3" 
+            id="ar-plane">
+        </a-entity>
         <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
         <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
         <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
