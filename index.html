@@ -12,7 +12,7 @@
             theme: {
                 extend: {
                     colors: {
-                        primary: '#165DFF', // 主色调（程序员风格的蓝色）
+                        primary: '#165DFF',
                         dark: '#1E293B',
                         light: '#F8FAFC'
                     },
@@ -24,7 +24,7 @@
         }
     </script>
     
-    <!-- 基础样式 -->
+
     <style type="text/tailwindcss">
         @layer utilities {
             .section-padding {
@@ -37,14 +37,13 @@
     </style>
 </head>
 <body class="bg-light text-dark antialiased">
-    <!-- 导航栏 - 固定顶部，滚动时背景变实 -->
+    <!-- Menu bar -->
     <nav class="fixed w-full z-50 transition-all duration-300 bg-light/90 backdrop-blur-sm shadow-sm">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
-                <!-- 姓名/Logo -->
+                <!-- Logo -->
                 <a href="#home" class="text-xl font-bold text-primary">Alan Wong</a>
                 
-                <!-- 桌面端导航链接 -->
                 <div class="hidden md:flex space-x-8">
                     <a href="#about" class="text-dark hover:text-primary transition-colors">About</a>
                     <a href="#skills" class="text-dark hover:text-primary transition-colors">Skills</a>
@@ -52,14 +51,12 @@
                     <a href="#contact" class="text-dark hover:text-primary transition-colors">Contact</a>
                 </div>
                 
-                <!-- 移动端菜单按钮 -->
                 <button id="menuBtn" class="md:hidden text-dark hover:text-primary">
                     <i class="fa-solid fa-bars text-xl"></i>
                 </button>
             </div>
         </div>
         
-        <!-- 移动端导航菜单（默认隐藏） -->
         <div id="mobileMenu" class="md:hidden hidden bg-light shadow-md">
             <div class="container mx-auto px-4 py-3 flex flex-col space-y-3">
                 <a href="#about" class="py-2 text-dark hover:text-primary transition-colors">About</a>
@@ -70,11 +67,11 @@
         </div>
     </nav>
 
-    <!-- 英雄区（首页） -->
+    <!-- Main Area -->
     <section id="home" class="pt-32 pb-20 bg-gradient-to-b from-primary/5 to-light">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col md:flex-row items-center gap-8">
-                <!-- 左侧文字 -->
+                <!-- Left -->
                 <div class="md:w-1/2 text-center md:text-left">
                     <h1 class="text-[clamp(2.5rem,5vw,4rem)] font-bold leading-tight mb-4">
                         Hi, I'm <span class="text-primary">Alan,<br/> Wong Wai Lun</span>
@@ -96,7 +93,7 @@
                     </div>
                 </div>
                 
-                <!-- 右侧头像/插图 -->
+                <!-- Right -->
                 <div class="md:w-1/2 flex justify-center">
                     <div class="relative w-64 h-64 sm:w-80 sm:h-80 rounded-full overflow-hidden border-4 border-primary/20 shadow-lg">
                         <img src="./var/image/alanwong_2025.jpg" alt="Profile Picture" class="w-full h-full object-cover">
@@ -106,32 +103,27 @@
         </div>
     </section>
 
-    <!-- 关于我部分 -->
+    <!-- About Me  -->
     <section id="about" class="section-padding bg-white">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12">About Me</h2>
             
             <div class="max-w-3xl mx-auto">
                 <p class="text-lg text-gray-700 mb-6">
-                    With over 5 years of experience as a Full Stack Developer, I specialize in building robust web applications 
-                    using JavaScript/TypeScript, React, Node.js, and modern cloud technologies.
+                    With over 12 years of experience as a Full Stack and Mobile Developer, I specialize in building robust web applications using JavaScript/TypeScript, React, Node.js, and modern cloud technologies, as well as native and cross-platform mobile apps with Swift, Kotlin, and React Native.
                 </p>
                 <p class="text-lg text-gray-700 mb-6">
-                    I hold a Bachelor's degree in Computer Science from XYZ University, and I'm constantly learning new 
-                    frameworks and tools to stay ahead in the fast-paced tech industry. My approach to development is 
-                    iterative, collaborative, and focused on delivering solutions that solve real business problems.
+                    I hold a Bachelor of Science (Hons) Business Information Technology Bachelor Degree from City University of Hong Kong - SCOPE, and I'm constantly learning new frameworks and tools to stay ahead in the fast-paced tech industry. My approach to development is iterative, collaborative, and focused on delivering solutions that solve real business problems across web and mobile platforms.
                 </p>
                 <p class="text-lg text-gray-700">
-                    When I'm not coding, I contribute to open-source projects, write technical blogs, and mentor junior 
-                    developers to help them grow their skills. I believe in writing clean, maintainable code and following 
-                    best practices to ensure scalability and reliability.
+                    I believe in writing clean, maintainable code and following best practices to ensure scalability and reliability for both web and mobile applications.
                 </p>
                 
-                <!-- 核心信息卡片 -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-10">
+                <!-- Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 mt-10">
                     <div class="bg-light p-6 rounded-lg shadow-sm border border-gray-100">
                         <i class="fa-solid fa-code text-primary text-2xl mb-3"></i>
-                        <h3 class="font-bold text-xl mb-2">5+ Years</h3>
+                        <h3 class="font-bold text-xl mb-2">12+ Years</h3>
                         <p class="text-gray-600">Professional Experience</p>
                     </div>
                     <div class="bg-light p-6 rounded-lg shadow-sm border border-gray-100">
@@ -139,29 +131,19 @@
                         <h3 class="font-bold text-xl mb-2">30+</h3>
                         <p class="text-gray-600">Completed Projects</p>
                     </div>
-                    <div class="bg-light p-6 rounded-lg shadow-sm border border-gray-100">
-                        <i class="fa-solid fa-trophy text-primary text-2xl mb-3"></i>
-                        <h3 class="font-bold text-xl mb-2">8+</h3>
-                        <p class="text-gray-600">Tech Certifications</p>
-                    </div>
-                    <div class="bg-light p-6 rounded-lg shadow-sm border border-gray-100">
-                        <i class="fa-solid fa-globe text-primary text-2xl mb-3"></i>
-                        <h3 class="font-bold text-xl mb-2">5+</h3>
-                        <p class="text-gray-600">Countries Worked With</p>
-                    </div>
+                    
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 技能部分 -->
-    <section id="skills" class="section-padding bg-gray-50">
+    <!-- Skills -->
+     <section id="skills" class="section-padding bg-gray-50">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12">My Skills</h2>
             
-            <!-- 技能分类展示 -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- 前端技能 -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Frontend -->
                 <div class="bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow">
                     <div class="text-primary text-3xl mb-4">
                         <i class="fa-solid fa-desktop"></i>
@@ -176,7 +158,7 @@
                     </ul>
                 </div>
                 
-                <!-- 后端技能 -->
+                <!-- Backend -->
                 <div class="bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow">
                     <div class="text-primary text-3xl mb-4">
                         <i class="fa-solid fa-server"></i>
@@ -191,7 +173,22 @@
                     </ul>
                 </div>
                 
-                <!-- 工具/软技能 -->
+                <!-- Mobile Development -->
+                <div class="bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                    <div class="text-primary text-3xl mb-4">
+                        <i class="fa-solid fa-mobile-screen-button"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Mobile Development</h3>
+                    <ul class="space-y-2 text-gray-700">
+                        <li><i class="fa-solid fa-check text-primary mr-2"></i> Swift (iOS Native)</li>
+                        <li><i class="fa-solid fa-check text-primary mr-2"></i> Kotlin (Android Native)</li>
+                        <li><i class="fa-solid fa-check text-primary mr-2"></i> React Native (Cross-Platform)</li>
+                        <li><i class="fa-solid fa-check text-primary mr-2"></i> Mobile UI/UX Design</li>
+                        <li><i class="fa-solid fa-check text-primary mr-2"></i> App Store Deployment</li>
+                    </ul>
+                </div>
+
+                <!-- Tools & Soft Skills -->
                 <div class="bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow">
                     <div class="text-primary text-3xl mb-4">
                         <i class="fa-solid fa-tools"></i>
@@ -199,8 +196,8 @@
                     <h3 class="text-xl font-bold mb-4">Tools & Soft Skills</h3>
                     <ul class="space-y-2 text-gray-700">
                         <li><i class="fa-solid fa-check text-primary mr-2"></i> Git / GitHub</li>
-                        <li><i class="fa-solid fa-check text-primary mr-2"></i> Docker / CI/CD</li>
-                        <li><i class="fa-solid fa-check text-primary mr-2"></i> Agile / Scrum</li>
+                        <li><i class="fa-solid fa-check text-primary mr-2"></i> Docker</li>  
+                        <!-- / CI/CD -->
                         <li><i class="fa-solid fa-check text-primary mr-2"></i> Problem Solving</li>
                         <li><i class="fa-solid fa-check text-primary mr-2"></i> Team Collaboration</li>
                     </ul>
@@ -209,13 +206,13 @@
         </div>
     </section>
 
-    <!-- 项目展示 -->
+    <!-- Projects Showcase -->
     <section id="projects" class="section-padding bg-white">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12">Featured Projects</h2>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- 项目1 -->
+                <!-- sample 1 -->
                 <div class="bg-light rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
                     <img src="https://picsum.photos/600/400?1" alt="E-Commerce Platform" class="w-full h-48 object-cover">
                     <div class="p-6">
@@ -237,7 +234,7 @@
                     </div>
                 </div>
                 
-                <!-- 项目2 -->
+                <!-- sample2 -->
                 <div class="bg-light rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
                     <img src="https://picsum.photos/600/400?2" alt="Task Management App" class="w-full h-48 object-cover">
                     <div class="p-6">
@@ -258,8 +255,8 @@
                         </div>
                     </div>
                 </div>
-                
-                <!-- 项目3 -->
+
+                <!-- sample3 -->
                 <div class="bg-light rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
                     <img src="https://picsum.photos/600/400?3" alt="Data Visualization Dashboard" class="w-full h-48 object-cover">
                     <div class="p-6">
@@ -284,14 +281,13 @@
         </div>
     </section>
 
-    <!-- 联系方式 -->
+    <!-- Contact Method -->
     <section id="contact" class="section-padding bg-primary/5">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12">Get In Touch</h2>
             
             <div class="max-w-4xl mx-auto">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-                    <!-- 联系信息 -->
+                <div class="grid grid-cols-1 md:grid-cols-1 gap-8 mb-8">
                     <div class="bg-white p-8 rounded-lg shadow-sm">
                         <h3 class="text-xl font-bold mb-6">Contact Information</h3>
                         <ul class="space-y-4">
@@ -320,14 +316,13 @@
                                 <i class="fa-brands fa-linkedin text-primary text-xl mt-1 mr-4"></i>
                                 <div>
                                     <p class="font-semibold">LinkedIn</p>
-                                    <a href="https://linkedin.com/in/johndoe" target="_blank" class="text-gray-600 hover:text-primary transition-colors">linkedin.com/in/johndoe</a>
+                                    <a href="www.linkedin.com/in/alan-wong-552b33158" target="_blank" class="text-gray-600 hover:text-primary transition-colors">linkedin.com/in/alan-wong-552b33158</a>
                                 </div>
                             </li>
                         </ul>
                     </div>
                     
-                    <!-- 简单联系表单 -->
-                    <div class="bg-white p-8 rounded-lg shadow-sm">
+                    <!-- <div class="bg-white p-8 rounded-lg shadow-sm">
                         <h3 class="text-xl font-bold mb-6">Send Me a Message</h3>
                         <form>
                             <div class="mb-4">
@@ -346,13 +341,13 @@
                                 Send Message
                             </button>
                         </form>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 页脚 -->
+    <!-- Footage -->
     <footer class="bg-dark text-white py-8">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col md:flex-row justify-between items-center">
@@ -372,15 +367,13 @@
         </div>
     </footer>
 
-    <!-- 移动端菜单交互脚本 -->
+    <!-- JS Script -->
     <script>
-        // 移动端菜单切换
         const menuBtn = document.getElementById('menuBtn');
         const mobileMenu = document.getElementById('mobileMenu');
         
         menuBtn.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
-            // 切换菜单图标（汉堡/叉号）
             const icon = menuBtn.querySelector('i');
             if (icon.classList.contains('fa-bars')) {
                 icon.classList.replace('fa-bars', 'fa-times');
@@ -389,7 +382,6 @@
             }
         });
         
-        // 滚动时导航栏样式变化
         window.addEventListener('scroll', () => {
             const nav = document.querySelector('nav');
             if (window.scrollY > 50) {
@@ -403,7 +395,6 @@
             }
         });
         
-        // 平滑滚动（锚点链接）
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -411,13 +402,11 @@
                 const targetElement = document.querySelector(targetId);
                 
                 if (targetElement) {
-                    // 关闭移动端菜单（如果打开）
                     if (!mobileMenu.classList.contains('hidden')) {
                         mobileMenu.classList.add('hidden');
                         menuBtn.querySelector('i').classList.replace('fa-times', 'fa-bars');
                     }
                     
-                    // 平滑滚动到目标位置（偏移导航栏高度）
                     window.scrollTo({
                         top: targetElement.offsetTop - 80,
                         behavior: 'smooth'
