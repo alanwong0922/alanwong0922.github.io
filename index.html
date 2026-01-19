@@ -1,6 +1,430 @@
-<html>
-    <body>
-        <p>Hi, I am Alan Wong</p>
-        <p></p>
-    </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alan Wong - Full Stack Developer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#165DFF', // 主色调（程序员风格的蓝色）
+                        dark: '#1E293B',
+                        light: '#F8FAFC'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    
+    <!-- 基础样式 -->
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .section-padding {
+                padding: 6rem 0;
+            }
+            .text-balance {
+                text-wrap: balance;
+            }
+        }
+    </style>
+</head>
+<body class="bg-light text-dark antialiased">
+    <!-- 导航栏 - 固定顶部，滚动时背景变实 -->
+    <nav class="fixed w-full z-50 transition-all duration-300 bg-light/90 backdrop-blur-sm shadow-sm">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- 姓名/Logo -->
+                <a href="#home" class="text-xl font-bold text-primary">Alan Wong</a>
+                
+                <!-- 桌面端导航链接 -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#about" class="text-dark hover:text-primary transition-colors">About</a>
+                    <a href="#skills" class="text-dark hover:text-primary transition-colors">Skills</a>
+                    <a href="#projects" class="text-dark hover:text-primary transition-colors">Projects</a>
+                    <a href="#contact" class="text-dark hover:text-primary transition-colors">Contact</a>
+                </div>
+                
+                <!-- 移动端菜单按钮 -->
+                <button id="menuBtn" class="md:hidden text-dark hover:text-primary">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- 移动端导航菜单（默认隐藏） -->
+        <div id="mobileMenu" class="md:hidden hidden bg-light shadow-md">
+            <div class="container mx-auto px-4 py-3 flex flex-col space-y-3">
+                <a href="#about" class="py-2 text-dark hover:text-primary transition-colors">About</a>
+                <a href="#skills" class="py-2 text-dark hover:text-primary transition-colors">Skills</a>
+                <a href="#projects" class="py-2 text-dark hover:text-primary transition-colors">Projects</a>
+                <a href="#contact" class="py-2 text-dark hover:text-primary transition-colors">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 英雄区（首页） -->
+    <section id="home" class="pt-32 pb-20 bg-gradient-to-b from-primary/5 to-light">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center gap-8">
+                <!-- 左侧文字 -->
+                <div class="md:w-1/2 text-center md:text-left">
+                    <h1 class="text-[clamp(2.5rem,5vw,4rem)] font-bold leading-tight mb-4">
+                        Hi, I'm <span class="text-primary">Alan,<br/> Wong Wai Lun</span>
+                    </h1>
+                    <h2 class="text-[clamp(1.2rem,3vw,1.8rem)] text-gray-600 mb-6">
+                        Full Stack Developer & Problem Solver
+                    </h2>
+                    <p class="text-lg text-gray-700 mb-8 max-w-lg text-balance">
+                        I build scalable, user-centric web applications with a focus on clean code and modern technologies. 
+                        Passionate about turning ideas into functional, high-performance software.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                        <a href="#projects" class="px-6 py-3 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors">
+                            View My Work
+                        </a>
+                        <a href="#contact" class="px-6 py-3 border border-primary text-primary rounded-lg hover:bg-primary/5 transition-colors">
+                            Get In Touch
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- 右侧头像/插图 -->
+                <div class="md:w-1/2 flex justify-center">
+                    <div class="relative w-64 h-64 sm:w-80 sm:h-80 rounded-full overflow-hidden border-4 border-primary/20 shadow-lg">
+                        <img src="./var/image/alanwong_2025.jpg" alt="Profile Picture" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 关于我部分 -->
+    <section id="about" class="section-padding bg-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12">About Me</h2>
+            
+            <div class="max-w-3xl mx-auto">
+                <p class="text-lg text-gray-700 mb-6">
+                    With over 5 years of experience as a Full Stack Developer, I specialize in building robust web applications 
+                    using JavaScript/TypeScript, React, Node.js, and modern cloud technologies.
+                </p>
+                <p class="text-lg text-gray-700 mb-6">
+                    I hold a Bachelor's degree in Computer Science from XYZ University, and I'm constantly learning new 
+                    frameworks and tools to stay ahead in the fast-paced tech industry. My approach to development is 
+                    iterative, collaborative, and focused on delivering solutions that solve real business problems.
+                </p>
+                <p class="text-lg text-gray-700">
+                    When I'm not coding, I contribute to open-source projects, write technical blogs, and mentor junior 
+                    developers to help them grow their skills. I believe in writing clean, maintainable code and following 
+                    best practices to ensure scalability and reliability.
+                </p>
+                
+                <!-- 核心信息卡片 -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-10">
+                    <div class="bg-light p-6 rounded-lg shadow-sm border border-gray-100">
+                        <i class="fa-solid fa-code text-primary text-2xl mb-3"></i>
+                        <h3 class="font-bold text-xl mb-2">5+ Years</h3>
+                        <p class="text-gray-600">Professional Experience</p>
+                    </div>
+                    <div class="bg-light p-6 rounded-lg shadow-sm border border-gray-100">
+                        <i class="fa-solid fa-project-diagram text-primary text-2xl mb-3"></i>
+                        <h3 class="font-bold text-xl mb-2">30+</h3>
+                        <p class="text-gray-600">Completed Projects</p>
+                    </div>
+                    <div class="bg-light p-6 rounded-lg shadow-sm border border-gray-100">
+                        <i class="fa-solid fa-trophy text-primary text-2xl mb-3"></i>
+                        <h3 class="font-bold text-xl mb-2">8+</h3>
+                        <p class="text-gray-600">Tech Certifications</p>
+                    </div>
+                    <div class="bg-light p-6 rounded-lg shadow-sm border border-gray-100">
+                        <i class="fa-solid fa-globe text-primary text-2xl mb-3"></i>
+                        <h3 class="font-bold text-xl mb-2">5+</h3>
+                        <p class="text-gray-600">Countries Worked With</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 技能部分 -->
+    <section id="skills" class="section-padding bg-gray-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12">My Skills</h2>
+            
+            <!-- 技能分类展示 -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- 前端技能 -->
+                <div class="bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                    <div class="text-primary text-3xl mb-4">
+                        <i class="fa-solid fa-desktop"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Frontend Development</h3>
+                    <ul class="space-y-2 text-gray-700">
+                        <li><i class="fa-solid fa-check text-primary mr-2"></i> HTML5 / CSS3</li>
+                        <li><i class="fa-solid fa-check text-primary mr-2"></i> JavaScript (ES6+)</li>
+                        <li><i class="fa-solid fa-check text-primary mr-2"></i> React / Next.js</li>
+                        <li><i class="fa-solid fa-check text-primary mr-2"></i> Tailwind CSS / Bootstrap</li>
+                        <li><i class="fa-solid fa-check text-primary mr-2"></i> Responsive Design</li>
+                    </ul>
+                </div>
+                
+                <!-- 后端技能 -->
+                <div class="bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                    <div class="text-primary text-3xl mb-4">
+                        <i class="fa-solid fa-server"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Backend Development</h3>
+                    <ul class="space-y-2 text-gray-700">
+                        <li><i class="fa-solid fa-check text-primary mr-2"></i> Node.js / Express</li>
+                        <li><i class="fa-solid fa-check text-primary mr-2"></i> Python / Django</li>
+                        <li><i class="fa-solid fa-check text-primary mr-2"></i> RESTful APIs</li>
+                        <li><i class="fa-solid fa-check text-primary mr-2"></i> MongoDB / PostgreSQL</li>
+                        <li><i class="fa-solid fa-check text-primary mr-2"></i> AWS / Azure</li>
+                    </ul>
+                </div>
+                
+                <!-- 工具/软技能 -->
+                <div class="bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                    <div class="text-primary text-3xl mb-4">
+                        <i class="fa-solid fa-tools"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Tools & Soft Skills</h3>
+                    <ul class="space-y-2 text-gray-700">
+                        <li><i class="fa-solid fa-check text-primary mr-2"></i> Git / GitHub</li>
+                        <li><i class="fa-solid fa-check text-primary mr-2"></i> Docker / CI/CD</li>
+                        <li><i class="fa-solid fa-check text-primary mr-2"></i> Agile / Scrum</li>
+                        <li><i class="fa-solid fa-check text-primary mr-2"></i> Problem Solving</li>
+                        <li><i class="fa-solid fa-check text-primary mr-2"></i> Team Collaboration</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 项目展示 -->
+    <section id="projects" class="section-padding bg-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12">Featured Projects</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- 项目1 -->
+                <div class="bg-light rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                    <img src="https://picsum.photos/600/400?1" alt="E-Commerce Platform" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">E-Commerce Platform</h3>
+                        <p class="text-gray-600 mb-4">A full-stack online store with payment integration, user authentication, and admin dashboard.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">React</span>
+                            <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">Node.js</span>
+                            <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">MongoDB</span>
+                        </div>
+                        <div class="flex gap-4">
+                            <a href="#" class="text-primary hover:text-primary/80 transition-colors">
+                                <i class="fa-solid fa-github mr-1"></i> Code
+                            </a>
+                            <a href="#" class="text-primary hover:text-primary/80 transition-colors">
+                                <i class="fa-solid fa-external-link mr-1"></i> Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 项目2 -->
+                <div class="bg-light rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                    <img src="https://picsum.photos/600/400?2" alt="Task Management App" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Task Management App</h3>
+                        <p class="text-gray-600 mb-4">A collaborative task tracker with real-time updates, team assignments, and progress analytics.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">Next.js</span>
+                            <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">PostgreSQL</span>
+                            <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">Socket.io</span>
+                        </div>
+                        <div class="flex gap-4">
+                            <a href="#" class="text-primary hover:text-primary/80 transition-colors">
+                                <i class="fa-solid fa-github mr-1"></i> Code
+                            </a>
+                            <a href="#" class="text-primary hover:text-primary/80 transition-colors">
+                                <i class="fa-solid fa-external-link mr-1"></i> Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 项目3 -->
+                <div class="bg-light rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                    <img src="https://picsum.photos/600/400?3" alt="Data Visualization Dashboard" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Data Visualization Dashboard</h3>
+                        <p class="text-gray-600 mb-4">An interactive dashboard for analyzing sales data with dynamic charts and filters.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">Vue.js</span>
+                            <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">Python</span>
+                            <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">Chart.js</span>
+                        </div>
+                        <div class="flex gap-4">
+                            <a href="#" class="text-primary hover:text-primary/80 transition-colors">
+                                <i class="fa-solid fa-github mr-1"></i> Code
+                            </a>
+                            <a href="#" class="text-primary hover:text-primary/80 transition-colors">
+                                <i class="fa-solid fa-external-link mr-1"></i> Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系方式 -->
+    <section id="contact" class="section-padding bg-primary/5">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12">Get In Touch</h2>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                    <!-- 联系信息 -->
+                    <div class="bg-white p-8 rounded-lg shadow-sm">
+                        <h3 class="text-xl font-bold mb-6">Contact Information</h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <i class="fa-solid fa-envelope text-primary text-xl mt-1 mr-4"></i>
+                                <div>
+                                    <p class="font-semibold">Email</p>
+                                    <a href="mailto:alanwong922@gmail.com" class="text-gray-600 hover:text-primary transition-colors">alanwong922@gmail.com</a>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa-solid fa-phone text-primary text-xl mt-1 mr-4"></i>
+                                <div>
+                                    <p class="font-semibold">Phone</p>
+                                    <a href="tel:62280484" class="text-gray-600 hover:text-primary transition-colors">+852 62280484</a>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa-brands fa-github text-primary text-xl mt-1 mr-4"></i>
+                                <div>
+                                    <p class="font-semibold">GitHub</p>
+                                    <a href="https://alanwong0922.github.io" target="_blank" class="text-gray-600 hover:text-primary transition-colors">alanwong0922.github.io</a>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa-brands fa-linkedin text-primary text-xl mt-1 mr-4"></i>
+                                <div>
+                                    <p class="font-semibold">LinkedIn</p>
+                                    <a href="https://linkedin.com/in/johndoe" target="_blank" class="text-gray-600 hover:text-primary transition-colors">linkedin.com/in/johndoe</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- 简单联系表单 -->
+                    <div class="bg-white p-8 rounded-lg shadow-sm">
+                        <h3 class="text-xl font-bold mb-6">Send Me a Message</h3>
+                        <form>
+                            <div class="mb-4">
+                                <label for="name" class="block text-gray-700 mb-2">Your Name</label>
+                                <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary" placeholder="Alan Wong">
+                            </div>
+                            <div class="mb-4">
+                                <label for="email" class="block text-gray-700 mb-2">Your Email</label>
+                                <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary" placeholder="alanwong922@gmail.com">
+                            </div>
+                            <div class="mb-6">
+                                <label for="message" class="block text-gray-700 mb-2">Your Message</label>
+                                <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary" placeholder="Hi Alan, I'd like to discuss..."></textarea>
+                            </div>
+                            <button type="submit" class="w-full px-6 py-3 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors">
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="bg-dark text-white py-8">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <p class="mb-4 md:mb-0">&copy; 2026 Alan Wong. All rights reserved.</p>
+                <div class="flex space-x-6">
+                    <a href="https://github.com/alanwong0922" target="_blank" class="hover:text-primary transition-colors">
+                        <i class="fa-brands fa-github text-xl"></i>
+                    </a>
+                    <a href="https://linkedin.com/in/alanwong0922" target="_blank" class="hover:text-primary transition-colors">
+                        <i class="fa-brands fa-linkedin text-xl"></i>
+                    </a>
+                    <a href="https://twitter.com/alanwong0922" target="_blank" class="hover:text-primary transition-colors">
+                        <i class="fa-brands fa-twitter text-xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 移动端菜单交互脚本 -->
+    <script>
+        // 移动端菜单切换
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            // 切换菜单图标（汉堡/叉号）
+            const icon = menuBtn.querySelector('i');
+            if (icon.classList.contains('fa-bars')) {
+                icon.classList.replace('fa-bars', 'fa-times');
+            } else {
+                icon.classList.replace('fa-times', 'fa-bars');
+            }
+        });
+        
+        // 滚动时导航栏样式变化
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-md');
+                nav.classList.remove('bg-light/90');
+                nav.classList.add('bg-light');
+            } else {
+                nav.classList.remove('shadow-md');
+                nav.classList.add('bg-light/90');
+                nav.classList.remove('bg-light');
+            }
+        });
+        
+        // 平滑滚动（锚点链接）
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    // 关闭移动端菜单（如果打开）
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                        menuBtn.querySelector('i').classList.replace('fa-times', 'fa-bars');
+                    }
+                    
+                    // 平滑滚动到目标位置（偏移导航栏高度）
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
 </html>
