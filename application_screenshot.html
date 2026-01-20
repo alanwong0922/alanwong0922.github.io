@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="zh_HK">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Application Screenshot</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+        <link rel="stylesheet" href="./var/css/custom.css">
+        <script>
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        colors: {
+                            primary: '#165DFF',
+                            dark: '#1E293B',
+                            light: '#F8FAFC'
+                        },
+                        fontFamily: {
+                            sans: ['Inter', 'system-ui', 'sans-serif'],
+                        },
+                    }
+                }
+            }
+        </script>
+        <style type="text/tailwindcss">
+            @layer utilities {
+                .section-padding {
+                    padding: 6rem 0;
+                }
+                .text-balance {
+                    text-wrap: balance;
+                }
+            }
+        </style>
+    </head>
+
+    <body class="bg-light text-dark antialiased">
+        <div class="container mx-auto px-4 section-padding">
+            <a href="./index.html" class="back-btn">← Back</a>
+            <h1 class="text-4xl font-bold mb-6 text-center">Application Screenshot</h1>
+            <!-- Navigation Links -->
+            
+            <a href="#application-1" class="text-primary hover:text-primary/80 transition-colors">Power Up AI Application</a> |
+            <a href="#application-2" class="text-primary hover:text-primary/80 transition-colors">SmartFit Application</a> |
+            <a href="#application-3" class="text-primary hover:text-primary/80 transition-colors">Lucky Draw Event Application</a> |
+            <a href="#mini-quiz" class="text-primary hover:text-primary/80 transition-colors">Chinese poems Mini Quiz</a> 
+
+            <section id="mini-quiz" class="pt-32 pb-20 bg-gradient-to-b from-primary/5 to-light">  
+                <div class="slider-wrapper">
+                    <h3 class="text-xl font-semibold mb-4">Mini Quiz Website (Chinese poems) </h3>
+                    <p class="text-base font-semibold mb-4">A mini quiz website built with HTML5, CSS3, and JavaScript</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                            <span><p>Source code language: </p></span>
+                            <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">HTML5</span>
+                            <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">CSS3</span>
+                            <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">JavaScript</span>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <img src="./var/image/mini_quiz_sc.png" alt="Application Screenshot" class="w-full">
+                    </div>
+                </div>
+            </section>
+            <section id="application-1" class="pt-32 pb-20 bg-gradient-to-b from-primary/5 to-light">  
+                <!-- Slider 1: Nature Photos -->
+                <div class="slider-wrapper">
+                    <h3 class="text-xl font-semibold mb-4">Power Up AI Application</h3>
+                    <p class="text-base font-semibold mb-4">Exercise with AR Fun Games, using AI as the body tracking.Sport exercise such as AR Boxing, Jumping Jack, Ski-hopping, Squat...</p>
+
+                    <div class="flex flex-wrap gap-2 mb-4">
+                            <span><p>Source code language: </p></span>
+                            <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">XCode </span>
+                            <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">Swift</span>
+                            <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">ARKit</span>
+                            <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">AR Body tracking</span>
+                    </div>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                            <span><p>Keyword: </p></span>
+                            <span class="px-3 py-1 bg-orange-500/10 text-orange-500 rounded-full text-sm">Fitness </span>
+                            <span class="px-3 py-1 bg-orange-500/10 text-orange-500 rounded-full text-sm">Body tracking</span>
+                            <span class="px-3 py-1 bg-orange-500/10 text-orange-500 rounded-full text-sm">Workout</span>
+                            <span class="px-3 py-1 bg-orange-500/10 text-orange-500 rounded-full text-sm">Sport </span>
+                    </div>
+
+                    <div class="clean-blockquote mb-6"></div>
+                    <div class="slideshow-container" id="slider1">
+                        <!-- Slides for Slider 1 -->
+                        <div class="slide active">
+                            <img src="./var/image/powerup.png" alt="Power Up 1">
+                        </div>
+                        <div class="slide">
+                            <img src="./var/image/powerup_2.png"  alt="Power Up 2">
+                        </div>
+                        <div class="slide">
+                            <img src="./var/image/powerup_3.png" alt="Power Up 3">
+                        </div>
+
+                        <!-- Navigation Arrows -->
+                        <button class="prev" onclick="changeSlide(-1, 'slider1')">&#10094;</button>
+                        <button class="next" onclick="changeSlide(1, 'slider1')">&#10095;</button>
+                    </div>
+
+                    <!-- Dots for Slider 1 -->
+                    <div class="dot-container" data-slider="slider1">
+                        <span class="dot active" onclick="currentSlide(1, 'slider1')"></span>
+                        <span class="dot" onclick="currentSlide(2, 'slider1')"></span>
+                        <span class="dot" onclick="currentSlide(3, 'slider1')"></span>
+                    </div>
+
+                    <!-- Play/Pause Button -->
+                    <button class="play-pause-btn" onclick="togglePlayPause('slider1')">Pause</button>
+                </div>
+            </section>
+
+            <section id="application-2" class="pt-32 pb-20 bg-gradient-to-b from-primary/5 to-light">  
+                <!-- Slider 2: City Photos (duplicate & modify for more sliders) -->
+                <div class="slider-wrapper">
+                    <h3 class="text-xl font-semibold mb-4">SmartFit Application</h3>
+                    <p class="text-base font-semibold mb-4">An application for Hong Kong student to recording their fitness data and daily nutrition record.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                            <span><p>Source code language: </p></span>
+                            <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">React Native</span>
+                            <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">PHP</span>
+                            <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">MYSQL</span>
+                    </div>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                            <span><p>Keyword: </p></span>
+                            <span class="px-3 py-1 bg-orange-500/10 text-orange-500 rounded-full text-sm">Fitness</span>
+                            <span class="px-3 py-1 bg-orange-500/10 text-orange-500 rounded-full text-sm">Nutrition</span>
+                            <span class="px-3 py-1 bg-orange-500/10 text-orange-500 rounded-full text-sm">Workout</span>
+                    </div>
+                    <div class="clean-blockquote mb-6"></div>
+
+                    <img src="./var/image/smartfit.png" alt="SmartFit 1">
+                </div>     
+            </section>
+
+
+            <section id="application-3" class="pt-32 pb-20 bg-gradient-to-b from-primary/5 to-light">  
+                <!-- Slider 3: City Photos (duplicate & modify for more sliders) -->
+                <div class="slider-wrapper">
+                    <h3 class="text-xl font-semibold mb-4">Lucky Draw Event Application</h3>
+                    <p class="text-base font-semibold mb-4">A lucky draw event for a shoppingmart in Hong Kong over 2 months.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                            <span><p>Source code language: </p></span>
+                            <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">Kotlin</span>
+                            <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">Wordpress</span>
+                            <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">PHP</span>
+                            <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">MYSQL</span>
+                    </div>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                            <span><p>Keyword: </p></span>
+                            <span class="px-3 py-1 bg-orange-500/10 text-orange-500 rounded-full text-sm">Event</span>
+                            <span class="px-3 py-1 bg-orange-500/10 text-orange-500 rounded-full text-sm">Lucky Draw</span>
+                            <span class="px-3 py-1 bg-orange-500/10 text-orange-500 rounded-full text-sm">Reporting</span>
+                    </div>
+                    <div class="clean-blockquote mb-6"></div>
+
+                    <div class="slideshow-container" id="slider3">
+                        <!-- Slides for Slider 3 -->
+                        <div class="slide active">
+                            <img src="./var/image/luckydraw.png" alt="Lucky Draw 1">
+                        </div>
+                        <div class="slide">
+                            <img src="./var/image/luckydraw_2.png" alt="Lucky Draw 2">
+                        </div>
+                        
+
+                        <!-- Navigation Arrows -->
+                        <button class="prev" onclick="changeSlide(-1, 'slider3')">&#10094;</button>
+                        <button class="next" onclick="changeSlide(1, 'slider3')">&#10095;</button>
+                    </div>
+
+                    <!-- Dots for Slider 3 -->
+                    <div class="dot-container" data-slider="slider3">
+                        <span class="dot active" onclick="currentSlide(1, 'slider3')"></span>
+                        <span class="dot" onclick="currentSlide(2, 'slider3')"></span>
+                        
+                    </div>
+
+                    <!-- Play/Pause Button -->
+                    <button class="play-pause-btn" onclick="togglePlayPause('slider3')">Pause</button>
+                </div>     
+            </section>
+        </div>
+    </body>
+    <footer>
+        <script src="./var/js/slideshow.js"></script>
+        <script src="./var/js/backtotop.js"></script>
+    </footer>
+</html>
